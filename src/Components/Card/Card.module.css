@@ -1,0 +1,61 @@
+.container{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: aqua; */
+    /* background: radial-gradient( #fff); */
+background-color: aliceblue;
+    border-radius: 10px ;
+    border:0.5px solid grey;
+    padding: 2%;
+    margin-bottom: 90px;
+}
+.heading{
+    color: grey;
+    display:flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.content{
+    text-align: justify;
+}
+
+.read{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+}
+.more{
+    background-color:coral;
+    border-radius: 10px;
+    width: 200px;
+
+}
+.icons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit{
+    font-size: 1.8rem;
+    color: green;
+    cursor: pointer;
+}
+
+.delete{
+    font-size: 1.8rem;
+    color: red;
+    cursor: pointer;
+}
+
+.reactIcon{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
