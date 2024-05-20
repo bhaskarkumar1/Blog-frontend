@@ -13,7 +13,7 @@ const ReadMore = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(` https://nice-shorts-ray.cyclic.app/read-more/${_id}`);
+        const response = await axios.get(`https://blog-fs-apino.onrender.com/read-more/${_id}`);
         setData(response.data);
       } catch (err) {
         setError(err);

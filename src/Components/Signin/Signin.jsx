@@ -29,7 +29,7 @@ const Signin = ({t,setT}) => {
         console.log("User data collected !",user)
 
         //check uername and the password with db 
-        const res= await axios.post(" https://nice-shorts-ray.cyclic.app/auth/login",user)
+        const res= await axios.post("https://blog-fs-apino.onrender.com/auth/login",user)
         // console.log("res",res.data[0].message)
         // console.log("abc",res.data) token 
 

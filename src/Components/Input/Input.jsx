@@ -25,7 +25,7 @@ const headers = {
       console.log(obj);
       let postBlog = async () => {
         try {
-            const response = await axios.post(' https://nice-shorts-ray.cyclic.app/create-blog', obj,{headers});
+            const response = await axios.post('https://blog-fs-apino.onrender.com/create-blog', obj,{headers});
             console.log(response.data); // Log success message or handle response as needed
             if(response.data.error){
               toast.error("Please Login to post!", {

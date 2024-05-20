@@ -26,7 +26,7 @@ let handleClick=async(e)=>{
     if(user.name.length!=0 && user.email.length!=0 && user.password.length!=0 ){
         console.log("user created with data : ",user)
         // send this data to db using axios
-         const res=await axios.post(" https://nice-shorts-ray.cyclic.app/auth/signup",user)
+         const res=await axios.post("https://blog-fs-apino.onrender.com/auth/signup",user)
         console.log(res)
         navigate('/');
 

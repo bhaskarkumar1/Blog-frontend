@@ -17,13 +17,15 @@ const Card = (props) => {
         const headers = {
           Authorization: `${props.t}`,
         };
-        await axios.delete(` https://nice-shorts-ray.cyclic.app/delete-blog/${props._id}`, {
+        await axios.delete(`https://blog-fs-apino.onrender.com/delete-blog/${props._id}`, {
           headers,
         });
         toast.success("Blog Deleted successfully!", {
           // position: toast.POSITION.TOP_RIGHT,
+          
           autoClose: 3000,
         });
+        props.setChange(!props.change)
         // window.location.reload();
       } else {
         console.log("please provide token !");
@@ -48,6 +50,7 @@ const Card = (props) => {
       title: props.title,
       description: props.description,
     });
+
 
     // navigate("/post",{
     //   state: {

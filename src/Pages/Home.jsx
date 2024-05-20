@@ -17,6 +17,7 @@ const Home=({t,setT})=>{
     const[search,setSearch]=useState("")
     const[filtered,setFiltered]=useState("")
 
+    const[change, setChange]=useState(false)
 
     const [show, setShow] = useState(false);
 
@@ -29,19 +30,19 @@ const Home=({t,setT})=>{
         title:"",
         description:""
     })
-
-useEffect(()=>{
     const fetchData=async()=>{
-        let url=" https://nice-shorts-ray.cyclic.app/getallblog"
-        let temp=await axios.get(url)
-        // console.log(data)
-        // console.log("t",t) // token is stored in t 
-        setData(temp.data)
-    }
+      let url="https://blog-fs-apino.onrender.com/getallblog"
+      let temp=await axios.get(url)
+      // console.log(data)
+      // console.log("t",t) // token is stored in t 
+      setData(temp.data)
+  }
+useEffect(()=>{
+
 fetchData()
 // console.log(data)
 console.log("search:",search)
-},[data])
+},[change])
     
 
 useEffect(()=>{
@@ -69,9 +70,10 @@ let handleSubmit=async()=>{
     //     "description":"dummy updated description"
     //   }
       try{
-      await axios.put(` https://nice-shorts-ray.cyclic.app/edit-blog/${current._id}`, current,{headers})
+      await axios.put(`https://blog-fs-apino.onrender.com/edit-blog/${current._id}`, current,{headers})
     //   console.log("id: ",props._id)
       setShow(false)
+      setChange(!change)
     }catch(error){
       console.log("error in updating")
     }
@@ -100,7 +102,10 @@ let handleSubmit=async()=>{
                 title={item.title}
                  email={item.email} 
                  author={item.author}
-                  description={item.description}/>
+                  description={item.description}
+                  setChange={setChange}
+                  change={change}
+                  />
             )):
             data.map((item)=>(
                 <Card 
@@ -113,6 +118,9 @@ let handleSubmit=async()=>{
                   description={item.description.slice(0,200)}
                   setShow={setShow} 
                   setCurrent={setCurrent}
+                  setChange={setChange}
+                  change={change}
+
                   />
     
                 ))
